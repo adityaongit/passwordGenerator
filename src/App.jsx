@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState, useRef } from "react";
+import copy from "./assets/copy.svg";
 
 const App = () => {
   const [length, setLength] = useState(8);
@@ -43,7 +44,7 @@ const App = () => {
       <div className="heading text-white sm:text-5xl font-medium text-4xl">
         Password Generator
       </div>
-      <div className="input-box mt-16 mx-auto">
+      <div className="input-box mt-16 mx-auto pb-4 flex">
         <input
           type="text"
           value={password}
@@ -54,9 +55,9 @@ const App = () => {
         />
         <button
           onClick={copyClipBoard}
-          className="rounded-xl text-black bg-[#EDEDED] px-4 py-2 hover:bg-[#dbd9d9] mx-5"
+          className="rounded-xl flex text-black bg-[#EDEDED] px-2 sm:px-4 py-2 hover:bg-[#bab8b8] transition ease-in-out delay-150 hover:-translate-y-0 hover:scale-110 duration-300 mx-5"
         >
-          Copy
+          <img src={copy} alt="" />
         </button>
       </div>
       <div className="custom">
@@ -72,7 +73,7 @@ const App = () => {
             className="range range-xs range-success m-6"
             step={2}
           />
-          <label htmlFor="lengthRange" className="text-white pl-4 pr-1">
+          <label htmlFor="lengthRange" className="text-white sm:pl-4 pr-1">
             Length:
           </label>
           <div className="text-white flex justify-center">{length}</div>
